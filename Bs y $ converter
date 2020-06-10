@@ -1,0 +1,30 @@
+# Este programa llama a Funcion_scraping
+# Porfirio Morales y Luis Lizardi
+
+import Funcion_scraping   # Llamo al archivo Funcion_scraping
+
+valor_moneda = Funcion_scraping.scrapi()
+
+valor_moneda = float(valor_moneda)
+
+
+#print("El cambio del dólar es: ",valor_moneda)
+
+dolar = valor_moneda
+
+print()
+print()
+print("Datos para la conversión")
+print()
+print("El dólar hoy tiene un valor de: ", dolar)
+print()
+monto_a_convertir = float(input("Monto a Convertir "))
+unit = input("(B) or ($) ")
+valor = monto_a_convertir * dolar
+if unit.upper() == "B":
+    converted = monto_a_convertir * dolar
+    print("El monto son ", ("{:,}".format(round(converted, 2))), " bolivares")
+if unit.upper() == "$":
+    converted = monto_a_convertir / dolar
+    print("El monto son ", ("{:,}".format(round(converted, 2))), " dolares")
+
